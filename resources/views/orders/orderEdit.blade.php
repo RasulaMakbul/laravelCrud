@@ -30,16 +30,29 @@
 
                 @php
                 $radioUnit=['kg','lb'];
+                $setItemr = array();
+                foreach($radioUnit as $key => $item) {
+                if ($item == $orders->unit) {
+                $setItemr[] = $item;
+                }
+                }
                 @endphp
-                <x-forms.checkbox name="unit" :radioUnit="$radioUnit" value=" {{$orders->unit}}" />
+                <x-forms.checkbox name="unit" :radioUnit="$radioUnit" :setItemr="$setItemr" />
 
-                <x-forms.input name=" deliveryDate" class="mt-2" title="Delivery Date" type="date" id="deliveryDate" value=" {{$orders->deliveryDate}}" />
+                <x-forms.input name=" deliveryDate" class="mt-2" title="Delivery Date" type="date" id="deliveryDate" value="{{ $orders->deliveryDate}}" />
 
                 @php
-                $dropItems=['processing','Shipped','Delivered','canceled']
+                $dropItems=['processing','Shipped','Delivered','canceled'];
+                $setItem = array();
+                foreach($dropItems as $key => $item) {
+                if ($item == $orders->status) {
+                $setItem[] = $item;
+                }
+                }
+
                 @endphp
 
-                <x-forms.dropdowns name="status" :dropItems="$dropItems" value=" {{$orders->status}}" />
+                <x-forms.dropdowns name="status" :dropItems="$dropItems" :setItem="$setItem" />
 
 
 
