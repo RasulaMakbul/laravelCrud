@@ -1,0 +1,16 @@
+.gridView {
+    margin-top: 30px;
+    display: grid;
+    padding: 10px;
+    grid-template-columns: 40% 60%;
+    grid-column-gap: 1em;
+}
+
+.gridView .gridLeft {
+    padding: 10px;
+}
+.main .row .card .cardBody img {
+    height: 20em;
+    width: 20em;
+    border-radius: 10px;
+}
